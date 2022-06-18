@@ -2736,6 +2736,61 @@
             return html;
         };
     }();
+    const iconMenu = document.querySelector(".icon-menu");
+    const menuBody = document.querySelector(".menu");
+    const lock = document.querySelector("html");
+    if (iconMenu) iconMenu.addEventListener("click", (function() {
+        lock.classList.toggle("lock");
+        iconMenu.classList.toggle("menu-open");
+        menuBody.classList.toggle("menu-open");
+    }));
+    function script_location() {
+        const location = document.querySelector(".header__call-box");
+        const newLocation = document.querySelector(".menu__body");
+        if (location) {
+            let cloneLocation = location.cloneNode(true);
+            cloneLocation.classList.add("newloc");
+            newLocation.appendChild(cloneLocation);
+        }
+    }
+    script_location();
+    function location2() {
+        const location2 = document.querySelector(".services__title");
+        const newLocation2 = document.querySelector(".services__body");
+        const insertBeforeLocation = document.querySelector(".services__nav");
+        if (location2) {
+            let cloneLocation2 = location2.cloneNode(true);
+            cloneLocation2.classList.add("newloc2");
+            newLocation2.insertBefore(cloneLocation2, insertBeforeLocation);
+        }
+    }
+    location2();
+    if (document.querySelectorAll(".tel")) [].forEach.call(document.querySelectorAll(".tel"), (function(input) {
+        var keyCode;
+        function mask(event) {
+            event.keyCode && (keyCode = event.keyCode);
+            var pos = this.selectionStart;
+            if (pos < 3) event.preventDefault();
+            var matrix = "+7 (___) ___ ____", i = 0, def = matrix.replace(/\D/g, ""), val = this.value.replace(/\D/g, ""), new_value = matrix.replace(/[_\d]/g, (function(a) {
+                return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
+            }));
+            i = new_value.indexOf("_");
+            if (-1 != i) {
+                i < 5 && (i = 3);
+                new_value = new_value.slice(0, i);
+            }
+            var reg = matrix.substr(0, this.value.length).replace(/_+/g, (function(a) {
+                return "\\d{1," + a.length + "}";
+            })).replace(/[+()]/g, "\\$&");
+            reg = new RegExp("^" + reg + "$");
+            if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+            if ("blur" == event.type && this.value.length < 5) this.value = "";
+        }
+        input.addEventListener("input", mask, false);
+        input.addEventListener("focus", mask, false);
+        input.addEventListener("blur", mask, false);
+        input.addEventListener("keydown", mask, false);
+    }));
     var splide = new Splide("#splide1", {
         perPage: 1,
         rewind: true,
@@ -2782,22 +2837,6 @@
         }
     });
     splide.mount();
-    const iconMenu = document.querySelector(".icon-menu");
-    const menuBody = document.querySelector(".menu");
-    const lock = document.querySelector("html");
-    if (iconMenu) iconMenu.addEventListener("click", (function() {
-        lock.classList.toggle("lock");
-        iconMenu.classList.toggle("menu-open");
-        menuBody.classList.toggle("menu-open");
-    }));
-    function script_location() {
-        const location = document.querySelector(".header__call-box");
-        const newLocation = document.querySelector(".menu__body");
-        let cloneLocation = location.cloneNode(true);
-        cloneLocation.classList.add("newloc");
-        newLocation.appendChild(cloneLocation);
-    }
-    script_location();
     window["FLS"] = true;
     isWebp();
 })();

@@ -2812,6 +2812,7 @@
         perMove: 1,
         rewind: true,
         gap: 20,
+        autoHeight: true,
         breakpoints: {
             767: {
                 perPage: 1

@@ -2791,53 +2791,79 @@
         input.addEventListener("blur", mask, false);
         input.addEventListener("keydown", mask, false);
     }));
-    var splide = new Splide("#splide1", {
-        perPage: 1,
-        rewind: true,
-        autoplay: true
-    });
-    splide.mount();
-    splide = new Splide("#splide2", {
-        perPage: 4,
-        rewind: true,
-        gap: 20,
-        perMove: 1,
-        pagination: false,
-        focus: "center",
-        autoWidth: true
-    });
-    splide.mount();
-    splide = new Splide("#splide3", {
-        perPage: 2,
-        perMove: 1,
-        rewind: true,
-        gap: 20,
-        autoHeight: true,
-        breakpoints: {
-            767: {
-                perPage: 1
-            }
+    document.addEventListener("DOMContentLoaded", (function() {
+        function initSliders() {
+            if (document.querySelector("#splide1")) new Splide("#splide1", {
+                perPage: 1,
+                rewind: true,
+                autoplay: true
+            }).mount();
+            if (document.querySelector("#splide2")) new Splide("#splide2", {
+                perPage: 4,
+                rewind: true,
+                gap: 20,
+                perMove: 1,
+                pagination: false,
+                focus: "center",
+                autoWidth: true
+            }).mount();
+            if (document.querySelector("#splide3")) new Splide("#splide3", {
+                perPage: 2,
+                perMove: 1,
+                rewind: true,
+                gap: 20,
+                autoHeight: true,
+                breakpoints: {
+                    767: {
+                        perPage: 1
+                    }
+                }
+            }).mount();
+            if (document.querySelector("#splide4")) new Splide("#splide4", {
+                perPage: 4,
+                perMove: 1,
+                rewind: true,
+                gap: 20,
+                breakpoints: {
+                    1250: {
+                        perPage: 3
+                    },
+                    800: {
+                        perPage: 2
+                    },
+                    490: {
+                        perPage: 1
+                    }
+                }
+            }).mount();
+            if (document.querySelector("#splide5")) new Splide("#splide5", {
+                perPage: 1,
+                rewind: false,
+                pagination: false
+            }).mount();
+            if (document.querySelector("#splide6")) new Splide("#splide6", {
+                perPage: 2,
+                perMove: 1,
+                rewind: false,
+                pagination: false,
+                breakpoints: {
+                    767: {
+                        perPage: 1
+                    }
+                }
+            }).mount();
         }
-    });
-    splide.mount();
-    splide = new Splide("#splide4", {
-        perPage: 4,
-        perMove: 1,
-        rewind: true,
-        gap: 20,
-        breakpoints: {
-            1250: {
-                perPage: 3
-            },
-            800: {
-                perPage: 2
-            },
-            490: {
-                perPage: 1
-            }
-        }
-    });
-    splide.mount();
+        initSliders();
+    }));
+    function reviews() {
+        let buttonReview = document.querySelector(".reviews-resume__button-click");
+        let formReview = document.querySelector(".reviews-resume__form-body");
+        if (buttonReview) buttonReview.addEventListener("click", (function() {
+            this.classList.add("review-active");
+            if (formReview) formReview.classList.add("review-active");
+        }));
+    }
+    reviews();
     window["FLS"] = true;
     isWebp();
 })();

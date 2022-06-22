@@ -2864,6 +2864,15 @@
         }));
     }
     reviews();
+    const filterBox = document.querySelectorAll(".box");
+    document.querySelector(".services__nav").addEventListener("click", (event => {
+        if ("BUTTON" !== event.target.tagName) return false;
+        let filterClass = event.target.dataset["f"];
+        filterBox.forEach((elem => {
+            elem.classList.remove("hide");
+            if (!elem.classList.contains(filterClass) && "all" !== filterClass) elem.classList.add("hide");
+        }));
+    }));
     window["FLS"] = true;
     isWebp();
 })();

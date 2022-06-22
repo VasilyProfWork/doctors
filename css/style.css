@@ -276,56 +276,6 @@ h6 {
   }
 }
 
-.header-top__location {
-  margin-right: 15px;
-  padding-top: 5px;
-}
-.header-top__location img {
-  max-width: 100%;
-  margin-right: 5px;
-}
-.header-top__location span {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  color: #3a3d44;
-}
-.header-top__box {
-  padding-top: 5px;
-}
-@media (min-width: 510px) {
-  .header-top__box {
-    display: flex;
-  }
-}
-.header-top__link {
-  margin-right: 40px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  text-decoration: underline;
-  color: #049a3b;
-  transition: all 0.3s ease 0s;
-}
-@media (max-width: 510px) {
-  .header-top__link {
-    margin-right: 0;
-    margin-bottom: 3px;
-  }
-}
-@media (any-hover: hover) {
-  .header-top__link:hover {
-    color: #097e34;
-  }
-}
-.header-top__time-work {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  color: #3a3d44;
-}
-
 @media (max-width: 1150px) {
   .menu {
     position: fixed;
@@ -1083,6 +1033,10 @@ h6 {
   }
 }
 
+.doctors__link_m {
+  max-width: 335px;
+}
+
 .doctors__body {
   padding-top: 110px;
 }
@@ -1131,31 +1085,36 @@ h6 {
     fill: #049a3b;
   }
 }
-.doctors__card {
-  border: 1px solid rgba(58, 61, 68, 0.3);
-  border-radius: 5px;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  max-width: 335px;
-  margin: 0 auto;
-}
 .doctors__avatar {
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 15px;
+  padding-bottom: 84.4%;
+  position: relative;
 }
 .doctors__avatar img {
-  max-width: 100%;
   border-radius: 5px;
 }
+.doctors__avatar-ibg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .doctors__content {
+  margin-top: auto;
   margin-left: 20px;
   margin-right: 20px;
+  display: flex;
+  flex-direction: column;
 }
 .doctors__block-top {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .doctors__profession {
   font-weight: 400;
@@ -1165,12 +1124,17 @@ h6 {
   border: 1px solid #3a3d44;
   border-radius: 5px;
   margin-right: 10px;
+  max-width: 230px;
+  align-self: flex-start;
 }
 .doctors__expirience {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
   color: #049a3b;
+  align-self: flex-start;
+  padding-top: 5px;
+  white-space: nowrap;
 }
 .doctors__name {
   font-weight: 700;
@@ -1504,6 +1468,7 @@ h6 {
   }
 }
 .services__name-elem button {
+  align-self: flex-start;
   font-weight: 700;
   font-size: 18px;
   line-height: 140%;
@@ -1530,6 +1495,11 @@ h6 {
     font-size: 16px;
   }
 }
+.services__box {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+}
 .services__title {
   margin-bottom: 45px;
 }
@@ -1554,17 +1524,22 @@ h6 {
   margin-bottom: 40px;
 }
 .services__item {
-  flex: 1 1 30%;
+  flex: 0 1 355px;
   padding: 0 10px;
   padding-top: 20px;
   display: flex;
+}
+@media (max-width: 91.25em) {
+  .services__item {
+    flex: 0 1 50%;
+  }
 }
 @media (max-width: 945px) {
   .services__item {
     flex: 0 1 50%;
   }
 }
-@media (max-width: 465px) {
+@media (max-width: 555px) {
   .services__item {
     flex: 1 1 100%;
   }
@@ -1573,14 +1548,39 @@ h6 {
   background: #ffffff;
   border: 1px solid rgba(58, 61, 68, 0.3);
   border-radius: 10px;
-  max-width: 335px;
+  max-width: 355px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
+.services__elem_m {
+  width: 355px;
+  height: 100%;
+}
+@media (max-width: 380px) {
+  .services__elem_m {
+    max-width: 310px;
+  }
+}
+.services__elem_n {
+  padding-top: 0 !important;
+}
+.services__image {
+  position: relative;
+  padding-top: 67.6%;
+}
 .services__image img {
-  max-width: 100%;
   border-radius: 10px 10px 0px 0px;
+}
+.services__image-ibg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .services__name {
   font-weight: 600;
@@ -1628,7 +1628,7 @@ h6 {
     margin-bottom: 20px;
   }
 }
-@media (max-width: 465px) {
+@media (max-width: 555px) {
   .services__block-box span {
     margin-bottom: 0;
   }
@@ -1655,7 +1655,7 @@ h6 {
     max-width: 100%;
   }
 }
-@media (max-width: 465px) {
+@media (max-width: 555px) {
   .services__block-box a {
     max-width: 120px;
   }
@@ -1675,13 +1675,18 @@ h6 {
     flex-direction: column;
   }
 }
-@media (max-width: 465px) {
+@media (max-width: 555px) {
   .services__block-box {
     flex-direction: row;
   }
 }
 
+.hide {
+  display: none;
+}
+
 .links-services {
+  margin-top: auto;
   border: 1px solid #8f8f8f;
   border-radius: 5px;
   display: flex;
@@ -2260,17 +2265,9 @@ h6 {
   }
 }
 
-.services__elem_m {
-  border: none;
-}
-
 .doctors__content_m {
   margin-left: 10px;
   margin-right: 10px;
-}
-
-.doctors__profession {
-  white-space: nowrap;
 }
 
 .stocks-page__body {
@@ -2712,6 +2709,7 @@ h6 {
 .doctor-resume__image {
   flex: 0 0 335px;
   margin-right: 20px;
+  margin-bottom: 45px;
 }
 .doctor-resume__image img {
   max-width: 100%;
@@ -2733,6 +2731,7 @@ h6 {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  margin-bottom: auto;
 }
 @media (max-width: 47.99875em) {
   .doctor-resume__box {
@@ -2743,6 +2742,7 @@ h6 {
   flex: 1 1 370px;
   margin-right: 80px;
   display: flex;
+  align-self: start;
   flex-wrap: wrap;
 }
 @media (max-width: 91.25em) {
@@ -2784,7 +2784,8 @@ h6 {
   border: 1px solid #3a3d44;
   border-radius: 5px;
   margin-right: 19px;
-  height: 32px;
+  min-height: 32px;
+  margin-bottom: 10px;
 }
 .doctor-resume__expirience {
   font-weight: 400;

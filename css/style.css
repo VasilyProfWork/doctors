@@ -1442,6 +1442,7 @@ h6 {
 }
 .doctors__body .splide__slide {
   max-height: 574px;
+  max-width: 355px;
 }
 
 @media (max-width: 47.99875em) {

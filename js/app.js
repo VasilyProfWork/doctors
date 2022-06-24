@@ -2813,6 +2813,7 @@
                 rewind: true,
                 gap: 20,
                 autoHeight: true,
+                pagination: false,
                 breakpoints: {
                     767: {
                         perPage: 1
@@ -2824,6 +2825,7 @@
                 perMove: 1,
                 rewind: true,
                 gap: 20,
+                pagination: false,
                 breakpoints: {
                     1250: {
                         perPage: 3
@@ -2852,6 +2854,26 @@
                     }
                 }
             }).mount();
+            if (document.querySelector("#splide7")) new Splide("#splide7", {
+                perPage: 1,
+                perMove: 1,
+                rewind: false,
+                gap: 20,
+                perMove: 1,
+                drag: "free",
+                arrows: false,
+                autoWidth: true
+            }).mount();
+            if (document.querySelector("#splide8")) new Splide("#splide8", {
+                perPage: 1,
+                rewind: true,
+                gap: 20,
+                perMove: 1,
+                arrows: false,
+                focus: "center",
+                pagination: true,
+                autoWidth: true
+            }).mount();
         }
         initSliders();
     }));
@@ -2865,14 +2887,24 @@
     }
     reviews();
     const filterBox = document.querySelectorAll(".box");
-    document.querySelector(".services__nav").addEventListener("click", (event => {
-        if ("BUTTON" !== event.target.tagName) return false;
-        let filterClass = event.target.dataset["f"];
-        filterBox.forEach((elem => {
-            elem.classList.remove("hide");
-            if (!elem.classList.contains(filterClass) && "all" !== filterClass) elem.classList.add("hide");
+    if (filterBox) {
+        document.querySelector(".services__nav").addEventListener("click", (event => {
+            if ("BUTTON" !== event.target.tagName) return false;
+            let filterClass = event.target.dataset["f"];
+            filterBox.forEach((elem => {
+                elem.classList.remove("hide");
+                if (!elem.classList.contains(filterClass) && "all" !== filterClass) elem.classList.add("hide");
+            }));
         }));
-    }));
+        document.querySelector(".services__nav-slider").addEventListener("click", (event => {
+            if ("BUTTON" !== event.target.tagName) return false;
+            let filterClass = event.target.dataset["f"];
+            filterBox.forEach((elem => {
+                elem.classList.remove("hide");
+                if (!elem.classList.contains(filterClass) && "all" !== filterClass) elem.classList.add("hide");
+            }));
+        }));
+    }
     window["FLS"] = true;
     isWebp();
 })();

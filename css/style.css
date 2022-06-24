@@ -104,6 +104,11 @@ h6 {
   flex-direction: column;
   overflow: hidden;
 }
+@media (min-width: 47.99875em) {
+  .wrapper {
+    zoom: 80%;
+  }
+}
 .wrapper > main {
   flex: 1 1 auto;
 }

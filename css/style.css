@@ -2756,7 +2756,12 @@ h6 {
     flex: 0 1 355px !important;
   }
 }
-@media (max-width: 723px) {
+@media (max-width: 800px) {
+  .services__item_m {
+    flex: 0 1 50% !important;
+  }
+}
+@media (max-width: 650px) {
   .services__item_m {
     flex: 0 1 100% !important;
   }
